@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <!-- OmniGuard proxy: foreground service + notifications -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name="com.agon.app.ads.SilinaApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <!-- SplashActivity - LAUNCHER Activity (Premium Splash Screen) -->
+        <!-- Uses SilinaSplashTheme with windowDisablePreview=true so the
+             system does NOT show the app icon before the splash loads.
+             The screen goes directly to black → splash background. -->
+        <activity
+            android:name=".ui.screens.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/SilinaSplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LoginActivity - Authentication Screen -->
+        <activity
+            android:name=".ui.screens.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- ProfilesActivity - User List / Accounts Page -->
+        <activity
+            android:name=".ui.screens.ProfilesActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- HubActivity - Main Menu / Sync Engine (entry point after profile selection) -->
+        <activity
+            android:name=".ui.screens.HubActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- DashboardActivity - Instant Grid (launched from HubActivity with CATEGORY extra) -->
+        <activity
+            android:name=".ui.screens.DashboardActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- PlayerActivity - ExoPlayer Playback Engine (PiP + HW Acceleration) -->
+        <activity
+            android:name=".ui.screens.PlayerActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|smallestScreenSize|screenLayout"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- MainActivity - Legacy Navigation -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- FeedActivity — TikTok-style vertical feed in PORTRAIT orientation -->
+        <activity
+            android:name=".ui.screens.FeedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/SilinaFullscreenTheme" />
+
+        <!-- OmniGuard Anti-Throttling Foreground Proxy (loopback 127.0.0.1:8080) -->
+        <!-- foregroundServiceType=mediaPlayback: required by Android 14+ for
+             any service that touches media playback. The type is ALSO set
+             programmatically in ProxyForegroundService.onCreate() via the
+             3-arg startForeground() overload — the manifest declaration
+             alone is not sufficient on API 34+. -->
+        <service
+            android:name="com.agon.app.proxy.ProxyForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback"
+            android:stopWithTask="false" />
+
+        <!-- AdMob App ID Meta Data (Required for Ads) -->
+        <!-- V9.7 — Now driven by BuildConfig.ADMOB_APP_ID so the real
+             production App ID can be injected via local.properties without
+             changing the manifest. Defaults to Google's test ID when
+             ADMOB_APP_ID is not set. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
+
+        <!-- V9.8 — Google Cast (Chromecast) support -->
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="com.agon.app.cast.CastOptionsProvider" />
+
+    </application>
+
+</manifest>

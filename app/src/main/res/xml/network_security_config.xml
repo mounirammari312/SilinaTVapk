@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  V9.7.1 — Network Security Configuration (FIXED)
+  ════════════════════════════════════════════════════════════════════════
+
+  V9.7 REGRESSION FIX: The original V9.7 config blocked cleartext HTTP
+  for all domains except localhost and a few TLDs (.xyz, .live, .stream,
+  .tv, .cdn). This broke M3U playlist loading because most M3U URLs use
+  HTTP (not HTTPS) on arbitrary domains (.com, .net, .org, etc.).
+
+  IPTV reality: M3U playlists, Xtream servers, and streaming edges
+  overwhelmingly use HTTP. Blocking cleartext would break the app for
+  the vast majority of users. The security trade-off of forcing HTTPS
+  is NOT worth breaking core functionality.
+
+  This config allows cleartext for ALL domains — effectively equivalent
+  to android:usesCleartextTraffic="true" but with a clearer audit trail.
+  The DoH tunnel (RedirectSniffer) still encrypts DNS queries, and
+  OkHttp's TLS is still used for HTTPS endpoints. Only HTTP traffic
+  is permitted (which is required for IPTV compatibility).
+
+  To tighten in the future: replace the base-config with cleartextTrafficPermitted="false"
+  and add explicit domain-config entries for your known IPTV servers.
+  ════════════════════════════════════════════════════════════════════════
+-->
+<network-security-config>
+
+    <!-- Allow cleartext HTTP for all domains.
+         Required for IPTV M3U playlists + Xtream servers that use HTTP. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+
+</network-security-config>

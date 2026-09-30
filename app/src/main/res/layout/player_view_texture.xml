@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  V3.6.2: PlayerView with TextureView surface type.
+  SurfaceView creates a separate hardware plane that composites ABOVE
+  the app's UI surface. This hides Compose overlays (ghost frame,
+  loading spinner, controls) behind the video's black re-init frame
+  during channel switches.
+
+  TextureView renders on the app's UI surface, so ALL Compose overlays
+  are ALWAYS drawn ON TOP of the video. This fixes the ghost-frame
+  black flash defect.
+-->
+<androidx.media3.ui.PlayerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:resize_mode="fit"
+    app:use_controller="false"
+    app:shutter_background_color="@android:color/black"
+    app:surface_type="texture_view" />
