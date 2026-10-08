@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Deep space disc -->
+    <path
+        android:fillColor="#14152B"
+        android:pathData="M54,54 m-30,0 a30,30 0 1,1 60,0 a30,30 0 1,1 -60,0" />
+    <!-- Aurora cyan signal arcs -->
+    <path
+        android:strokeColor="#4FF0E0"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M38,72 A26,26 0 0,1 38,36" />
+    <path
+        android:strokeColor="#8C4FF0E0"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M32,80 A36,36 0 0,1 32,28" />
+    <!-- Electric indigo play triangle -->
+    <path
+        android:fillColor="#7C6FFF"
+        android:pathData="M47,41 L47,67 L71,54 Z" />
+</vector>

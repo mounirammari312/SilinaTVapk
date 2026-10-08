@@ -1,3 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DOH</string>
+    <string name="app_name">Oria</string>
+
+    <!-- Login screen -->
+    <string name="login_subtitle">Fast Hybrid IPTV Player</string>
+    <string name="login_enter_details">Enter Your Login Details</string>
+    <string name="tab_xtream">Xtream API</string>
+    <string name="tab_m3u">M3U Playlist</string>
+    <string name="hint_profile_name">Name (e.g., Living Room)</string>
+    <string name="hint_server">Portal URL</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_m3u_url">M3U URL</string>
+    <string name="btn_add_user">ADD USER</string>
+    <string name="authenticating">Authenticating…</string>
+    <string name="loading_channels">Loading channels…</string>
+    <string name="error_all_fields">All fields are required.</string>
+    <string name="error_invalid_url">Please enter a valid URL.</string>
+    <string name="error_auth_failed">Authentication failed. Check your credentials.</string>
+    <string name="error_server">Server error: %1$s</string>
+    <string name="error_timeout">Connection timed out.</string>
+    <string name="error_host">Server not found.</string>
+    <string name="error_ssl">SSL error. Try http:// instead.</string>
+    <string name="error_network">Network error: %1$s</string>
+    <string name="error_m3u_download">Could not download the M3U playlist.</string>
+    <string name="error_m3u_empty">The playlist is empty or invalid.</string>
+    <string name="login_disclaimer">Note — Oria is a general media player and does not include any content. Do not connect any content that infringes copyrights. We do not sell playlists or subscriptions.</string>
+
+    <!-- Playlists screen -->
+    <string name="playlists_title">Playlists</string>
+    <string name="add_playlist">Add playlist</string>
+    <string name="active_badge">ACTIVE</string>
+    <string name="type_xtream">XTREAM</string>
+    <string name="type_m3u">M3U</string>
+    <string name="expires">Expires: %1$s</string>
+    <string name="connections">%1$d / %2$d connections</string>
+    <string name="channels_count">%1$d channels</string>
+    <string name="no_playlists">No playlists yet.\nAdd your Xtream or M3U subscription to start.</string>
+    <string name="delete_playlist">Delete playlist</string>
+    <string name="delete_playlist_msg">Delete “%1$s” and its cached channels?</string>
+    <string name="resync">Reload channels</string>
+    <string name="playlist_activated">Playlist activated</string>
+
+    <!-- Browse screen -->
+    <string name="search_hint">Search channels…</string>
+    <string name="favorites">Favorites</string>
+    <string name="all_channels">All Channels</string>
+    <string name="categories">Categories</string>
+    <string name="no_channels">No channels in this category.</string>
+    <string name="no_channels_sync">Channels are not loaded yet. Tap the refresh button to re-sync.</string>
+    <string name="error_not_panel">This URL is not a valid Xtream portal. Check the server link.</string>
+    <!-- v1.13.0 — 6-digit code login (generation server) -->
+    <string name="account_name">Account %1$d</string>
+    <string name="error_code_format">The code must be exactly 6 digits.</string>
+    <string name="error_code_limit">Limit reached. Try again in %1$d seconds.</string>
+    <string name="error_code_limit_generic">Limit reached. Please try again later.</string>
+    <string name="error_code_accounts">The generated accounts expired. Please try again.</string>
+    <string name="error_code_no_accounts">No accounts available right now. Try again later.</string>
+    <string name="no_results">No results for “%1$s”.</string>
+    <string name="no_favorites">No favorites yet. Long-press a channel to add it.</string>
+    <string name="untitled_category">Ungrouped</string>
+
+    <!-- Player screen -->
+    <string name="retry">Retry</string>
+    <string name="playback_error">This channel could not be played.</string>
+    <string name="trying_backup">Switching engine…</string>
+    <string name="engine_exo">EXO</string>
+    <string name="engine_vlc">VLC</string>
+    <string name="audio_tracks">Audio tracks</string>
+    <string name="aspect_fit">Fit</string>
+    <string name="aspect_fill">Fill</string>
+    <string name="aspect_zoom">Zoom</string>
+    <!-- v1.15.0 — player icon reorganization + subtitle feature (reference copy) -->
+    <string name="player_settings">Settings</string>
+    <string name="subtitles">Subtitles</string>
+    <string name="subtitle_off">Off</string>
+    <string name="screen_size">Screen Size</string>
+    <string name="no_audio_tracks">No audio tracks</string>
+    <string name="channel_list">Channels</string>
+    <string name="added_to_favorites">Added to favorites</string>
+    <string name="removed_from_favorites">Removed from favorites</string>
+    <!-- v1.16.0 — recording (reference engine copy) + subtitle rendering fix -->
+    <string name="recording">Recording</string>
+    <string name="recording_started">Recording started\n%1$s</string>
+    <string name="recording_saved">Recording saved (%1$d KB)\n%2$s</string>
+    <string name="recording_empty">Recording stopped (0 bytes)</string>
+    <string name="recording_unavailable">Recording is unavailable on the current engine</string>
+    <string name="recording_no_url">Cannot record — no stream URL</string>
+    <string name="recording_failed">Failed to start recording</string>
+    <!-- v1.17.0 — standalone recorder (working MP4 output) + subtitle charset/captcha fixes -->
+    <string name="recording_finalizing">Saving recording…</string>
+    <string name="recording_failed_with_reason">Recording failed: %1$s</string>
+
+    <!-- v1.18.0 — WATCH = DOWNLOAD: smart button + auto-save setting -->
+    <string name="download_button">Download the video</string>
+    <!-- v1.19.9 — the download button moved from the player's top bar to the
+         movie/series info pages (next to Play / on the episode cards) -->
+    <string name="download_busy">Another download is already running — wait for it to finish or stop it first.</string>
+    <string name="download_failed">Download failed: %1$s</string>
+    <string name="download_saved">Saved to your library\n%1$s</string>
+    <string name="download_finalizing">Finishing download…</string>
+    <string name="autosave_started">\u2B07 Auto save started — it stops when you leave</string>
+    <string name="vu_autosave">Auto Save While Watching</string>
+
+    <!-- v1.18.1 — the auto-save toggle moved INTO the player + the Saved
+         Videos library (dedicated page for every auto-saved video) -->
+    <string name="autosave_toggle_on">Auto save ON — it starts with the next movie</string>
+    <string name="autosave_toggle_off">Auto save OFF</string>
+    <!-- v1.19.0 — renamed per the user's feedback: the entry must SAY the
+         mission (watch WITHOUT internet), not just "Saved" -->
+    <string name="hub_saved_videos">Watch</string>
+    <string name="saved_videos_count">%1$d videos</string>
+    <string name="saved_videos_title">Saved Videos</string>
+    <string name="saved_watch">Watch</string>
+    <string name="saved_state_complete">Saved — offline</string>
+    <string name="saved_state_partial">Incomplete — watch what was saved</string>
+    <string name="saved_state_active">Saving… %1$d%%</string>
+    <!-- v1.19.13 — the saved-card state chips (short, for the 16:9 card corners) -->
+    <string name="saved_chip_partial">Partial</string>
+    <string name="saved_chip_saving">Saving %1$d%%</string>
+    <string name="saved_deleted">Deleted</string>
+    <string name="saved_delete_failed">Could not delete the file</string>
+    <string name="saved_delete_confirm_title">Delete this saved video?</string>
+    <string name="saved_empty_title">No saved videos yet</string>
+    <string name="saved_empty_message">Turn on auto save while watching a movie (the floppy button in the player) — everything you save lands here for offline watching.</string>
+
+    <!-- v1.18.2 — RESUME WATCHING: position memory + Continue-Watching
+         row + the Saved pill in the browse top bar -->
+    <string name="continue_watching">Continue Watching</string>
+    <string name="resumed_from_position">Resumed from %1$s</string>
+    <string name="saved_offline_tag">Offline</string>
+    <!-- v1.19.7 — RESUME DIRECT PLAY: a Continue-Watching card jumps
+         straight into the player; this toast covers a failed resolve
+         (dead panel link / stale record after a re-sync). -->
+    <string name="resume_play_failed">Could not open this title — open it from its info page.</string>
+    <!-- v1.19.8 — the supervised resume seek's recovery message: the
+         stored offset proved unservable on this connection, so playback
+         restarted from the beginning instead of freezing on the frame. -->
+    <string name="saved_card_subtitle">%1$d videos · offline</string>
+
+    <!-- v1.19.0 — BINGE-WATCHING (auto next episode) + the redesigned
+         16:9 Continue-Watching banners + the in-progress episode badge -->
+    <string name="next_episode">Next Episode</string>
+    <string name="play_now">Play Now</string>
+    <string name="resume_badge">Resume</string>
+    <string name="remaining_time">%1$s left</string>
+
+    <!-- v2.2.3 — SKIP INTRO (the Netflix-style binge pair's first half):
+         the plan-card pill on the player's bottom-end edge while an
+         episode's playhead sits inside the intro window. -->
+    <string name="skip_intro">Skip Intro</string>
+
+    <!-- v2.2.4 — THE CONTENT SIDEBAR: the player's slide-out list shows
+         THE RIGHT LIST for what's playing (episodes while bingeing a
+         series, the movies list during a movie) instead of crashing on
+         synthetic VOD rows. -->
+    <string name="movies_header">Movies</string>
+    <string name="vod_preparing">Preparing…</string>
+
+    <!-- v2.3.0 — MULTI-SCREEN (الشاشات المتعددة): up to four live
+         channels playing simultaneously in a split-screen grid — the
+         professional IPTV apps' multi-view. The focused cell owns the
+         audio; D-pad/touch move between cells; one tap expands a cell
+         fullscreen. -->
+    <string name="multiscreen_title">Multi-Screen</string>
+    <string name="multiscreen_entry_cd">Open multi-screen mode</string>
+    <string name="multiscreen_two">2 Screens</string>
+    <string name="multiscreen_four">4 Screens</string>
+    <string name="multiscreen_start">Start Watching</string>
+    <string name="multiscreen_empty_slot">Add</string>
+    <string name="multiscreen_pick_hint">Sound follows the selected screen</string>
+    <string name="multiscreen_fullscreen_cd">Expand this screen</string>
+    <string name="multiscreen_back_grid">Back to screens</string>
+    <string name="multiscreen_change_channel">Change channel of screen %1$d</string>
+    <string name="multiscreen_not_supported">Not supported</string>
+    <string name="multiscreen_cell_error">Channel unavailable</string>
+    <string name="multiscreen_fail_decoder">This device cannot decode this channel</string>
+    <string name="multiscreen_fail_server">The server refused the connection</string>
+    <string name="multiscreen_fail_timeout">The source is not responding</string>
+    <string name="multiscreen_need_one">Pick at least one channel to start</string>
+    <string name="multiscreen_assigned_tag">Screen %1$d</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+
+    <!-- Accounts screen (reference: ProfilesActivity) -->
+        <string name="accounts_title">Accounts</string>
+        <string name="accounts_subtitle">Select an account to continue</string>
+        <string name="accounts_hint">Long-press a card to delete it</string>
+        <!-- Loading screen (reference: HubActivity sync stage) -->
+        <string name="sync_connect">Connecting to server…</string>
+        <string name="sync_categories">Fetching categories…</string>
+        <string name="sync_channels">Loading channels… %1$d</string>
+        <string name="sync_finish">Finishing up…</string>
+        <string name="sync_done">Done — %1$d channels ready</string>
+        <string name="sync_failed">Sync failed</string>
+        <string name="sync_account">Account: %1$s</string>
+        <string name="back_to_accounts">Back to accounts</string>
+        <!-- Hub screen (reference: HubActivity three cards) -->
+        <string name="hub_brand">IPTV PLAYER</string>
+        <string name="hub_live_tv">LIVE TV</string>
+        <string name="hub_movies">MOVIES</string>
+        <string name="hub_series">SERIES</string>
+        <string name="coming_soon">SOON</string>
+        <string name="coming_soon_message">Movies and Series arrive in Phase 2</string>
+        <string name="switch_account">Switch account</string>
+
+    <!-- Channel view screen (v1.3.0) -->
+    <string name="epg_guide_title">Program guide</string>
+    <string name="epg_now_badge">NOW</string>
+    <string name="epg_unavailable_title">Unavailable</string>
+    <string name="epg_unavailable">EPG is not available for this channel</string>
+    <string name="epg_loading">Loading program guide</string>
+    <string name="now_playing_line">Now: %1$s</string>
+    <string name="live_badge">LIVE</string>
+    <string name="no_info">No information</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_home">Home</string>
+    <string name="cd_pip">Picture in picture</string>
+    <string name="cd_aspect">Aspect ratio</string>
+    <string name="cd_fullscreen">Fullscreen</string>
+    <string name="cd_prev_category">Previous category</string>
+    <string name="cd_next_category">Next category</string>
+
+    <!-- VOD: movies + series (v1.4.0) -->
+    <string name="movies_count">%1$d movies</string>
+    <string name="series_count">%1$d series</string>
+    <string name="no_movies">No movies in this category.</string>
+    <string name="no_series">No series in this category.</string>
+    <string name="no_vod_favorites">No favorites yet. Tap the heart on a poster to add it.</string>
+    <string name="vod_needs_xtream">Movies and Series need an Xtream account.\n(M3U playlists keep everything in the channel list.)</string>
+    <string name="field_director">Director</string>
+    <string name="field_release">Release date</string>
+    <string name="field_duration">Duration</string>
+    <string name="field_genre">Genre</string>
+    <string name="field_cast">Cast</string>
+    <string name="no_plot">No description available.</string>
+    <string name="play_movie">Play Movie</string>
+    <string name="play_episode">Play episode</string>
+    <string name="season_number">Season %1$d</string>
+    <string name="episodes_count">%1$d episodes</string>
+    <string name="no_episodes">No episodes available for this season.</string>
+    <string name="field_rating">Rating</string>
+    <string name="cast_section">Cast</string>
+    <string name="plot_section">Story</string>
+    <string name="episodes_header">Episodes</string>
+    <string name="preparing_playback">Preparing…</string>
+    <string name="vod_diag">Diagnostics</string>
+    <string name="vod_trace_title">VOD diagnostics</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="copied">Copied</string>
+    <string name="no_trace">No VOD requests recorded yet.</string>
+    <string name="sync_movies">Loading movies…</string>
+    <string name="sync_series">Loading series…</string>
+
+
+    <!-- v1.4.7 — VU reference app strings (verbatim) -->
+    <string name="vu_back">Back</string>
+    <string name="vu_search_categories">Search Categories</string>
+    <string name="vu_unavailable">Unavailable -</string>
+
+    <!-- v1.4.8 — VU user-list page strings (activity_user_list.xml, verbatim) -->
+    <string name="vu_list_of_user">List of User</string>
+    <string name="vu_add_user">Add User</string>
+    <string name="vu_edit_user">Edit User</string>
+    <string name="vu_save">Save</string>
+    <string name="vu_portal_removed">This portal is removed successfully.</string>
+    <string name="vu_premium">Premium</string>
+    <string name="cd_edit_user">Edit account</string>
+    <string name="cd_delete_user">Delete account</string>
+4.11 — login flow (reference: add/edit portal; v1.19.12 removed the intro slider) -->
+    <string name="vu_enter_m3u_url">Enter M3U URL</string>
+    <string name="vu_login_xtream">Login With Xtream Codes API</string>
+    <string name="vu_browse_playlist">Browse Your Playlist</string>
+    <string name="vu_connect_mac">Connect with MAC ID</string>
+    <!-- v1.13.0 — 6-digit code login -->
+    <string name="vu_login_code">Login With 6-Digit Code</string>
+    <string name="vu_code_hint">6-digit code</string>
+    <string name="vu_code_button">Generate &amp; Login</string>
+    <!-- v1.19.0 — the code page's HOW-TO panel (user request: the user
+         must know HOW to add codes and WHAT they get) -->
+    <string name="vu_code_how_title">How to use your code?</string>
+    <string name="vu_code_step1">Get a 6-digit activation code from your provider.</string>
+    <string name="vu_code_step2">Enter the six digits in the code field below.</string>
+    <string name="vu_code_step3">Press the golden Generate &amp; Login button — accounts are added automatically.</string>
+    <string name="vu_code_gets_line">You get 3 ready accounts with live channels, movies and series — working instantly, zero setup.</string>
+    <!-- v1.14.0 — QR login (SMART CONNECT bridge, engine from the reference app) -->
+    <string name="vu_login_xtream_short">Xtream Codes API</string>
+    <string name="vu_login_qr">Login With QR Code</string>
+    <string name="vu_qr_title">QR LOGIN</string>
+    <string name="vu_qr_scan_hint">Scan with your phone to sync credentials</string>
+    <string name="vu_qr_verify">Verification Code</string>
+    <string name="vu_qr_listening">Waiting for connection…</string>
+    <string name="vu_qr_connecting">Connecting…</string>
+    <string name="vu_qr_close">CLOSE</string>
+    <string name="vu_qr_invalid_payload_short">Invalid data received from the QR page. Please try again.</string>
+    <string name="vu_portal_connectivity">(Portal Connectivity)</string>
+    <string name="vu_enter_login_details">Enter Your Login Details</string>
+    <string name="vu_stalker_connectivity">Stalker Portal Connectivity</string>
+    <string name="vu_name">Name</string>
+    <string name="vu_username">Username</string>
+    <string name="vu_password">Password</string>
+    <string name="vu_portal_url">Portal URL</string>
+    <string name="vu_m3u_url">M3U URL</string>
+    <string name="vu_mac_address">MAC Address</string>
+    <string name="vu_m3u_file_path">M3U File Path</string>
+    <string name="vu_browse">Browse</string>
+    <string name="vu_important_note">Note - Do not connect any content that infringes copyrights on the application. We do not sell any playlist or subscriptions. Oria is a General Media Player that does not include any content.</string>
+    <string name="vu_engine_pending">This connection method is ready — its engine will be enabled in the next phase.</string>
+
+    <!-- v1.5.0 — settings page + stalker portal + local file browse -->
+    <string name="vu_general_settings">General Settings</string>
+    <string name="vu_time_format">Time Format</string>
+    <string name="vu_epg_timeline">EPG Timeline</string>
+    <string name="vu_parental_control">Parental Control</string>
+    <string name="vu_rate_us">Rate Us</string>
+    <string name="vu_check_update">Check Update</string>
+    <string name="vu_language">Language</string>
+    <string name="vu_save_changes">save changes</string>
+    <string name="vu_24_hours">24 Hours Format</string>
+    <string name="vu_12_hours">12 Hours Format</string>
+    <string name="vu_show_only_epg">Show Channels Only With EPG</string>
+    <string name="vu_show_all_channels">Show All Channels</string>
+    <string name="vu_set_parent_password">Set Parent Password</string>
+    <!-- fragment_parent_password.xml — verbatim from the reference -->
+    <string name="vu_confirm_password">Confirm Password</string>
+    <string name="vu_enter_password">Enter Password</string>
+    <string name="vu_enter_confirm_password">Enter Confirm Password</string>
+    <string name="vu_ok">Ok</string>
+    <string name="vu_newest_version">App %s is Currently their newest version available</string>
+    <string name="vu_autostart_boot">AutoStart On Boot UP</string>
+    <string name="vu_show_full_epg">Show Full EPG</string>
+    <string name="vu_active_subtitle">Active Subtitle</string>
+    <string name="vu_put_mac">Please put mac address.</string>
+    <string name="vu_portal_not_working">This portal is not working. Please try another portal.</string>
+    <string name="vu_portal_added">Portal is added successfully.</string>
+    <string name="vu_portal_edited">Portal is edited successfully.</string>
+    <string name="vu_select_m3u">Select .m3u</string>
+    <string name="vu_only_m3u">Please select only .m3u files</string>
+    <string name="vu_this_name_exit">This Name is exist in your playlists. Please use other name.</string>
+    <string name="vu_file_no_url">The selected file contains no stream URL. Please select a valid .m3u file.</string>
+
+    <!-- v1.6.0 — home page (reference: activity_home.xml + AccountInfoDlgFragment + CustomProgressDlgFragment) -->
+    <string name="vu_home_settings">Settings</string>
+    <string name="vu_change_user">Change User</string>
+    <string name="vu_user_info">User Info</string>
+    <string name="vu_notification">Notifications</string>
+    <string name="vu_update">Update</string>
+    <string name="vu_search">Search</string>
+    <string name="vu_catch_up">CATCH UP</string>
+    <string name="vu_last_update">Last Update :</string>
+    <string name="vu_expiration">Expiration :</string>
+    <string name="vu_logged_in">Logged In :</string>
+    <string name="vu_unlimited">Unlimited</string>
+    <string name="vu_account">Account Info</string>
+    <string name="vu_account_status">Account Status</string>
+    <string name="vu_expiry_date">Expiry Date</string>
+    <string name="vu_log_out">Log Out</string>
+    <string name="vu_text_please_wait">Please Wait…</string>
+    <string name="vu_text_download_desc">We are connecting to your server to get the channels,</string>
+    <string name="vu_text_download_desc_2">movies and series information.</string>
+    <string name="vu_login_successfully">Login Successfully</string>
+
+    <!-- v1.12.0 — Catch-Up TV + EPG Timeline + Parental Control -->
+    <!-- v1.12.3 — reference-verbatim: catch_up_live / text_no_catchup_found /
+         no_information from the vuiptv strings. -->
+    <string name="vu_catch_up_live">CATCH UP/Live</string>
+    <string name="vu_no_catchup_found">No Catch Up Found</string>
+    <string name="no_information">No Information</string>
+    <string name="vu_catch_up_syncing">Preparing Catch-Up data…</string>
+    <string name="vu_catch_up_counts">channels %1$d · archive %2$d · categories %3$d</string>
+    <string name="vu_pincode_incorrect">Your pincode is incorrect</string>
+    <string name="vu_epg_timeline_title">EPG Timeline</string>
+    <string name="vu_no_programs">No programs</string>
+    <string name="vu_no_archived_programs">No archived programs for this day</string>
+    <string name="vu_program_not_archived">This program is not archived</string>
+    <string name="vu_open_timeline">Open EPG timeline</string>
+
+    <!-- v1.19.10 — the player's remote-style channel keys (+CH / CH-) and
+         the open-parked resume ("continue watching opens paused") -->
+    <string name="cd_channel_next">Next channel</string>
+    <string name="cd_channel_prev">Previous channel</string>
+    <string name="resume_paused_hint">Resuming from %1$s — press play to continue</string>
+
+    <!-- v2.0.0 — the admin panel's remote update dialog (OriaUpdateDialog) -->
+    <string name="update_available_title">Update Available</string>
+    <string name="update_available_version">Version %1$s</string>
+    <string name="update_downloading">Downloading… %1$d%%</string>
+    <string name="update_now">Update Now</string>
+    <string name="update_later">Later</string>
+    <string name="update_mandatory_note">This update is required to keep using the app</string>
+
+    <!-- v2.0.0 — the panel's in-app announcement (OriaAnnouncementOverlay);
+         the title/body themselves come from the panel, only the button is ours -->
+    <string name="announcement_ok">OK</string>
+
+    <!-- v2.0.2 — the Google-ads-style announcement card -->
+    <string name="announcement_badge">AD</string>
+    <string name="announcement_visit">Visit</string>
+    <string name="announcement_image">Ad image</string>
+
+    <!-- v2.0.2 — Premium (Phase 2): the screen and the Xtream-server login -->
+    <string name="premium_title">Premium Account</string>
+    <!-- v2.0.4 — the shared crown banner's CTA on the method-picker,
+         accounts and settings pages -->
+    <string name="premium_cta">Upgrade to Premium</string>
+    <!-- v2.0.5 — the short pill label of the channels-grid premium entry -->
+    <string name="premium_short">Premium</string>
+    <string name="premium_subtitle">Unlock a full world of exclusive content</string>
+    <string name="premium_plans">Plans &amp; Pricing</string>
+    <string name="premium_month">1 month</string>
+    <string name="premium_days">%1$d days</string>
+    <string name="premium_popular">Most Popular</string>
+    <!-- v2.2.0 — the contact CTA above the login card, split in three so the
+         magic word renders in NEON GREEN inside the gold sentence (user
+         directive: the "free" of the free trial must pop). -->
+    <string name="premium_whatsapp_trial_pre">"Contact us to activate the "</string>
+    <string name="premium_whatsapp_trial_accent">free</string>
+    <string name="premium_whatsapp_trial_post">" trial"</string>
+    <string name="premium_have_account">I have a Premium account</string>
+    <string name="premium_login">Premium Sign In</string>
+    <string name="premium_username">Username</string>
+    <string name="premium_password">Password</string>
+    <string name="premium_back">Back</string>
+
+    <!-- v2.1.0 — THE PREMIUM SUBSCRIPTION MODEL: date-based activation
+         (the Xtream account's exp_date), gated features with one free
+         trial each, the free 3-account limit, ad-free premium -->
+    <string name="premium_gate_title">Premium Feature</string>
+    <string name="premium_gate_trial_body">You have used your one free trial of "%1$s". Activate a Premium subscription to keep using it.</string>
+    <string name="premium_gate_accounts_title">Account Limit Reached</string>
+    <string name="premium_gate_accounts_body">The free plan allows up to %1$s accounts. Premium unlocks unlimited accounts.</string>
+    <string name="premium_gate_cta">Activate Premium</string>
+    <string name="premium_dismiss">Not now</string>
+    <string name="premium_feat_offline">Offline viewing</string>
+    <string name="premium_feat_download">Downloading movies &amp; series</string>
+    <string name="premium_feat_record">Recording channels</string>
+    <string name="premium_feat_accounts">Unlimited accounts</string>
+    <string name="premium_feat_noads">Ad-free — no announcements</string>
+    <string name="premium_info_title">Your Premium Account</string>
+    <string name="premium_info_account">Account</string>
+    <string name="premium_info_start">Start date</string>
+    <string name="premium_info_end">Expiry date</string>
+    <string name="premium_info_no_expiry">No expiry date</string>
+    <string name="premium_info_days_left">%1$d days left</string>
+    <string name="premium_info_features">Enabled features</string>
+    <string name="premium_done">Close</string>
+    <string name="error_account_limit">The free plan is limited to %1$d accounts. Upgrade to Premium for unlimited accounts.</string>
+    <!-- v2.1.1 — the professional premium/free/expired account states:
+         the live crown on the logo, the benefits deck on the subscribe
+         page, the renewal/expiry line on the account cards -->
+    <string name="premium_features_title">Everything in Premium</string>
+    <string name="premium_deck_sub">Every feature, on every screen, for the whole subscription period.</string>
+    <string name="premium_ends_on">Ends %1$s</string>
+    <string name="premium_ended_on">Ended %1$s</string>
+    <!-- v2.1.3 — month names for OriaDateFmt (dates follow the app's language) -->
+    <string-array name="oria_months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="vu_account_button">Account</string>
+    <string name="premium_whatsapp_message">Hello, I would like to subscribe to the {plan} plan in the ORIA app</string>
 </resources>

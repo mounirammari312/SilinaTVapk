@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v2.3.0 — MULTI-SCREEN: the 2×2 grid glyph (the mini player's
+     multi-screen key; the same metaphor as the player's GridView icon,
+     in the button-row's drawable idiom). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- top-left cell -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,3h8v8h-8z M5,5v4h4v-4z" />
+    <!-- top-right cell -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13,3h8v8h-8z M15,5v4h4v-4z" />
+    <!-- bottom-left cell -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,13h8v8h-8z M5,15v4h4v-4z" />
+    <!-- bottom-right cell (the hollow one — the invitation to fill it) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13,13h8v8h-8z M15,15v4h4v-4z"
+        android:fillAlpha="0.45" />
+</vector>

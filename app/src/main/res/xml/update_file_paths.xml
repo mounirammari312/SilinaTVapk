@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v2.0.0 — UpdateCenter's APK hand-off to the system installer.
+     The download lands in getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+     = Android/data/com.superz.iptvplayer/files/Download → external-files-path. -->
+<paths>
+    <external-files-path name="oria_updates" path="Download/" />
+</paths>

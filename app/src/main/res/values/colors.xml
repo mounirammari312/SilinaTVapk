@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg">#0A0B14</color>
+    <!-- Oria brand — deep purple that makes the gold+purple fox pop (v1.8.0) -->
+    <color name="ic_launcher_background">#1A0B2E</color>
+</resources>

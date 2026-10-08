@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- In-app brand logo (VectorDrawable — safely loadable by Compose painterResource).
+     NOTE: R.mipmap.ic_launcher is an AdaptiveIconDrawable (XML) which Compose's
+     painterResource() CANNOT render — it threw IllegalArgumentException and crashed
+     the app at first composition. The adaptive icon remains for the launcher only. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Antenna -->
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M54,42 L41,25 M54,42 L67,25" />
+    <path
+        android:fillColor="#7C6FFF"
+        android:pathData="M41,25 m-3.5,0 a3.5,3.5 0 1,1 7,0 a3.5,3.5 0 1,1 -7,0" />
+    <path
+        android:fillColor="#4FF0E0"
+        android:pathData="M67,25 m-3.5,0 a3.5,3.5 0 1,1 7,0 a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Screen body -->
+    <path
+        android:fillColor="#12131F"
+        android:strokeColor="#2E3050"
+        android:strokeWidth="2"
+        android:pathData="M24,42 h60 a8,8 0 0,1 8,8 v28 a8,8 0 0,1 -8,8 h-60 a8,8 0 0,1 -8,-8 v-28 a8,8 0 0,1 8,-8 z" />
+
+    <!-- Inner screen sheen -->
+    <path
+        android:fillColor="#1A1B2E"
+        android:pathData="M22,72 h64 v6 a8,8 0 0,1 -8,8 h-48 a8,8 0 0,1 -8,-8 z" />
+
+    <!-- Play triangle with brand gradient -->
+    <path android:pathData="M49,53 L49,71 L66,62 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="49"
+                android:startY="53"
+                android:endX="66"
+                android:endY="71"
+                android:startColor="#7C6FFF"
+                android:endColor="#4FF0E0" />
+        </aapt:attr>
+    </path>
+
+    <!-- Stand -->
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M48,86 L44,93 M60,86 L64,93" />
+</vector>

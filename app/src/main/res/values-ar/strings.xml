@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oria</string>
+
+    <!-- شاشة تسجيل الدخول -->
+    <string name="login_subtitle">مشغل IPTV هجين فائق السرعة</string>
+    <string name="login_enter_details">أدخل بيانات تسجيل الدخول</string>
+    <string name="tab_xtream">Xtream API</string>
+    <string name="tab_m3u">قائمة M3U</string>
+    <string name="hint_profile_name">الاسم (مثال: غرفة الجلوس)</string>
+    <string name="hint_server">رابط السيرفر (Portal URL)</string>
+    <string name="hint_username">اسم المستخدم</string>
+    <string name="hint_password">كلمة المرور</string>
+    <string name="hint_m3u_url">رابط قائمة M3U</string>
+    <string name="btn_add_user">إضافة مستخدم</string>
+    <string name="authenticating">جاري التحقق…</string>
+    <string name="loading_channels">جاري تحميل القنوات…</string>
+    <string name="error_all_fields">جميع الحقول مطلوبة.</string>
+    <string name="error_invalid_url">الرجاء إدخال رابط صحيح.</string>
+    <string name="error_auth_failed">فشل تسجيل الدخول. تحقق من البيانات.</string>
+    <string name="error_server">خطأ في السيرفر: %1$s</string>
+    <string name="error_timeout">انتهت مهلة الاتصال.</string>
+    <string name="error_host">لم يتم العثور على السيرفر.</string>
+    <string name="error_ssl">خطأ SSL. جرّب http:// بدلاً منه.</string>
+    <string name="error_network">خطأ في الشبكة: %1$s</string>
+    <string name="error_m3u_download">تعذّر تنزيل قائمة M3U.</string>
+    <string name="error_m3u_empty">القائمة فارغة أو غير صالحة.</string>
+    <string name="login_disclaimer">ملاحظة — هذا التطبيق مشغل وسائط عام لا يتضمن أي محتوى. لا تقم بتوصيل أي محتوى ينتهك حقوق النشر. نحن لا نبيع قوائم أو اشتراكات.</string>
+
+    <!-- شاشة القوائم -->
+    <string name="playlists_title">القوائم</string>
+    <string name="add_playlist">إضافة قائمة</string>
+    <string name="active_badge">نشطة</string>
+    <string name="type_xtream">XTREAM</string>
+    <string name="type_m3u">M3U</string>
+    <string name="expires">تنتهي: %1$s</string>
+    <string name="connections">%1$d / %2$d اتصالات</string>
+    <string name="channels_count">%1$d قناة</string>
+    <string name="no_playlists">لا توجد قوائم بعد.\nأضف اشتراك Xtream أو M3U للبدء.</string>
+    <string name="delete_playlist">حذف القائمة</string>
+    <string name="delete_playlist_msg">حذف “%1$s” وقنواتها المخزنة؟</string>
+    <string name="resync">إعادة تحميل القنوات</string>
+    <string name="playlist_activated">تم تنشيط القائمة</string>
+
+    <!-- شاشة التصفح -->
+    <string name="search_hint">ابحث في القنوات…</string>
+    <string name="favorites">المفضلة</string>
+    <string name="all_channels">كل القنوات</string>
+    <string name="categories">التصنيفات</string>
+    <string name="no_channels">لا توجد قنوات في هذا التصنيف.</string>
+    <string name="no_channels_sync">لم يتم تحميل القنوات بعد. اضغط زر التحديث أعلى الشاشة لإعادة المزامنة.</string>
+    <string name="error_not_panel">الرابط ليس بوابة Xtream صالحة. تأكد من رابط السيرفر.</string>
+    <!-- v1.13.0 — تسجيل الدخول بالكود (سيرفر التوليد) -->
+    <string name="account_name">حساب %1$d</string>
+    <string name="error_code_format">يجب أن يتكوّن الكود من 6 أرقام بالضبط.</string>
+    <string name="error_code_limit">تم بلوغ الحد الأقصى. أعد المحاولة بعد %1$d ثانية.</string>
+    <string name="error_code_limit_generic">تم بلوغ الحد الأقصى. الرجاء إعادة المحاولة لاحقًا.</string>
+    <string name="error_code_accounts">انتهت صلاحية الحسابات المولّدة. الرجاء إعادة المحاولة.</string>
+    <string name="error_code_no_accounts">لا توجد حسابات متاحة حاليًا. أعد المحاولة لاحقًا.</string>
+    <string name="no_results">لا نتائج لـ “%1$s”.</string>
+    <string name="no_favorites">لا مفضلة بعد. اضغط مطولاً على قناة لإضافتها.</string>
+    <string name="untitled_category">غير مصنف</string>
+
+    <!-- شاشة المشغل -->
+    <string name="retry">إعادة المحاولة</string>
+    <string name="playback_error">تعذّر تشغيل هذه القناة.</string>
+    <string name="trying_backup">جاري تبديل المحرك…</string>
+    <string name="engine_exo">EXO</string>
+    <string name="engine_vlc">VLC</string>
+    <string name="audio_tracks">المسارات الصوتية</string>
+    <string name="aspect_fit">ملاءمة</string>
+    <string name="aspect_fill">تعبئة</string>
+    <string name="aspect_zoom">تكبير</string>
+    <!-- v1.15.0 — player icon reorganization + subtitle feature (reference copy) -->
+    <string name="player_settings">الإعدادات</string>
+    <string name="subtitles">الترجمة</string>
+    <string name="subtitle_off">إيقاف</string>
+    <string name="screen_size">حجم الشاشة</string>
+    <string name="no_audio_tracks">لا توجد مسارات صوتية</string>
+    <string name="channel_list">القنوات</string>
+    <string name="added_to_favorites">أُضيفت إلى المفضلة</string>
+    <string name="removed_from_favorites">أُزيلت من المفضلة</string>
+    <!-- v1.16.0 — التسجيل (نسخ محرك المرجع) + إصلاح ظهور الترجمة -->
+    <string name="recording">التسجيل</string>
+    <string name="recording_started">بدأ التسجيل\n%1$s</string>
+    <string name="recording_saved">تم حفظ التسجيل (%1$d كيلوبايت)\n%2$s</string>
+    <string name="recording_empty">تم إيقاف التسجيل (0 بايت)</string>
+    <string name="recording_unavailable">التسجيل غير متاح على المحرك الحالي</string>
+    <string name="recording_no_url">لا يمكن التسجيل — لا يوجد رابط للبث</string>
+    <string name="recording_failed">فشل بدء التسجيل</string>
+    <!-- v1.17.0 — مسجل مستقل (ملف MP4 يعمل) + إصلاح ترميز الترجمة والتقييد -->
+    <string name="recording_finalizing">جارٍ حفظ التسجيل…</string>
+    <string name="recording_failed_with_reason">فشل التسجيل: %1$s</string>
+
+    <!-- v1.18.0 — المشاهدة = التنزيل: زر ذكي + إعداد الحفظ التلقائي -->
+    <string name="download_button">تنزيل الفيديو</string>
+    <!-- v1.19.9 — انتقل زر التنزيل من شريط المشغّل العلوي إلى صفحات معلومات
+         الأفلام والمسلسلات (بجانب زر التشغيل / على بطاقات الحلقات) -->
+    <string name="download_busy">هناك تنزيل آخر قيد التشغيل — انتظر انتهاءه أو أوقفه أولاً.</string>
+    <string name="download_failed">فشل التنزيل: %1$s</string>
+    <string name="download_saved">تم الحفظ في مكتبتك\n%1$s</string>
+    <string name="download_finalizing">جارٍ إنهاء التنزيل…</string>
+    <string name="autosave_started">\u2B07 بدأ الحفظ التلقائي — سيتوقف عند الخروج من المشاهدة</string>
+    <string name="vu_autosave">الحفظ التلقائي أثناء المشاهدة</string>
+
+    <!-- v1.18.1 — انتقل مفتاح الحفظ التلقائي إلى داخل المشغّل + مكتبة
+         الفيديوهات المحفوظة (صفحة مخصّصة لكل فيديو محفوظ تلقائياً) -->
+    <string name="autosave_toggle_on">الحفظ التلقائي مُفعّل — يبدأ مع الفيلم التالي</string>
+    <string name="autosave_toggle_off">تم إيقاف الحفظ التلقائي</string>
+    <!-- v1.19.0 — طلب المستخدم: الاسم يجب أن يخبر أن المشاهدة بلا أنترنت -->
+    <string name="hub_saved_videos">مشاهدة</string>
+    <string name="saved_videos_count">%1$d فيديو</string>
+    <string name="saved_videos_title">الفيديوهات المحفوظة</string>
+    <string name="saved_watch">مشاهدة</string>
+    <string name="saved_state_complete">محفوظ — يعمل دون إنترنت</string>
+    <string name="saved_state_partial">غير مكتمل — شاهد الجزء المحفوظ</string>
+    <string name="saved_state_active">جارٍ الحفظ… %1$d%%</string>
+    <!-- v1.19.13 — the saved-card state chips (short, for the 16:9 card corners) -->
+    <string name="saved_chip_partial">غير مكتمل</string>
+    <string name="saved_chip_saving">حفظ %1$d%%</string>
+    <string name="saved_deleted">تم الحذف</string>
+    <string name="saved_delete_failed">تعذّر حذف الملف</string>
+    <string name="saved_delete_confirm_title">حذف هذا الفيديو المحفوظ؟</string>
+    <string name="saved_empty_title">لا توجد فيديوهات محفوظة بعد</string>
+    <string name="saved_empty_message">فعّل الحفظ التلقائي أثناء مشاهدة فيلم (زر القرص المرن في المشغّل) — كل ما تحفظه يظهر هنا للمشاهدة دون إنترنت.</string>
+
+    <!-- v1.18.2 — استئناف المشاهدة: ذاكرة موضع التوقف + صف «استئناف
+         المشاهدة» + زر المحفوظات في الشريط العلوي لشاشة الاستعراض -->
+    <string name="continue_watching">استئناف المشاهدة</string>
+    <string name="resumed_from_position">استئناف من %1$s</string>
+    <string name="saved_offline_tag">بلا أنترنت</string>
+    <!-- v1.19.7 — التشغيل المباشر للاستئناف: بطاقة الاستئناف تفتح
+         المشغل مباشرة؛ هذا التوست يظهر عند فشل تجهيز الرابط. -->
+    <string name="resume_play_failed">تعذر فتح هذا العنوان — افتحه من صفحة معلوماته.</string>
+    <!-- v1.19.8 — رسالة تعافي الاستئناف المُراقَب: تعذر جلب نقطة التوقف
+         على هذا الاتصال، فأُعيد التشغيل من البداية بدل التجمّد على اللقطة. -->
+    <string name="saved_card_subtitle">%1$d فيديو · بلا أنترنت</string>
+
+    <!-- v1.19.0 — المشاهدة المتواصلة (الحلقة التالية تلقائياً) + تصميم
+         بطاقات الاستئناف 16:9 الجديدة + شارة الحلقة الجارية -->
+    <string name="next_episode">الحلقة التالية</string>
+    <string name="play_now">شغّل الآن</string>
+    <string name="resume_badge">متابعة</string>
+    <string name="remaining_time">تبقّى %1$s</string>
+
+    <!-- v2.2.3 — تخطي المقدمة (النصف الأول من ثنائي المشاهدة المتواصلة
+         بأسلوب المنصات العالمية): زر بطاقة الخطة على الحافة السفلية
+         للمشغّل ما دام رأس التشغيل داخل نافذة المقدمة. -->
+    <string name="skip_intro">تخطي المقدمة</string>
+
+    <!-- v2.2.4 — القائمة الجانبية للمحتوى: القائمة المنسدلة في المشغّل
+         تعرض القائمة الصحيحة لما يجري تشغيله (الحلقات عند متابعة مسلسل،
+         وقائمة الأفلام أثناء مشاهدة فيلم) بدلاً من انهيار التطبيق على
+         صفحات الفيديو الاصطناعية. -->
+    <string name="movies_header">الأفلام</string>
+    <string name="vod_preparing">جارِ التحضير…</string>
+
+    <!-- v2.3.0 — الشاشات المتعددة: حتى أربع قنوات مباشرة تعمل في وقت
+         واحد داخل شبكة تقسيم الشاشة (وضع العرض المتعدد لدى التطبيقات
+         الاحترافية). الشاشة المحددة تملك الصوت؛ التنقل بين الشاشات
+         بأزرار الاتجاهات أو اللمس؛ ونقرة واحدة توسّع الشاشة لملء
+         العرض. -->
+    <string name="multiscreen_title">الشاشات المتعددة</string>
+    <string name="multiscreen_entry_cd">فتح وضع الشاشات المتعددة</string>
+    <string name="multiscreen_two">شاشتان</string>
+    <string name="multiscreen_four">أربع شاشات</string>
+    <string name="multiscreen_start">ابدأ المشاهدة</string>
+    <string name="multiscreen_empty_slot">إضافة</string>
+    <string name="multiscreen_pick_hint">الصوت يتبع الشاشة المحددة</string>
+    <string name="multiscreen_fullscreen_cd">تكبير هذه الشاشة</string>
+    <string name="multiscreen_back_grid">العودة إلى الشاشات</string>
+    <string name="multiscreen_change_channel">تغيير قناة الشاشة %1$d</string>
+    <string name="multiscreen_not_supported">غير مدعومة</string>
+    <string name="multiscreen_cell_error">القناة غير متوفرة</string>
+    <string name="multiscreen_fail_decoder">هذا الجهاز لا يدعم فك ترميز هذه القناة</string>
+    <string name="multiscreen_fail_server">الخادم رفض الاتصال</string>
+    <string name="multiscreen_fail_timeout">المصدر لا يستجيب</string>
+    <string name="multiscreen_need_one">اختر قناة واحدة على الأقل للبدء</string>
+    <string name="multiscreen_assigned_tag">الشاشة %1$d</string>
+
+    <!-- عام -->
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string name="delete">حذف</string>
+
+    <!-- شاشة الحسابات (المرجع: ProfilesActivity) -->
+        <string name="accounts_title">الحسابات</string>
+        <string name="accounts_subtitle">اختر حسابًا للمتابعة</string>
+        <string name="accounts_hint">اضغط مطولاً على البطاقة لحذفها</string>
+        <!-- شاشة التحميل (المرجع: مرحلة المزامنة في HubActivity) -->
+        <string name="sync_connect">جاري الاتصال بالسيرفر…</string>
+        <string name="sync_categories">جاري تحميل التصنيفات…</string>
+        <string name="sync_channels">جاري تحميل القنوات… %1$d</string>
+        <string name="sync_finish">إتمام المزامنة…</string>
+        <string name="sync_done">اكتمل التحميل — %1$d قناة جاهزة</string>
+        <string name="sync_failed">فشلت المزامنة</string>
+        <string name="sync_account">الحساب: %1$s</string>
+        <string name="back_to_accounts">العودة إلى الحسابات</string>
+        <!-- شاشة البطاقات الثلاث (المرجع: HubActivity) -->
+        <string name="hub_brand">IPTV PLAYER</string>
+        <string name="hub_live_tv">البث المباشر</string>
+        <string name="hub_movies">أفلام</string>
+        <string name="hub_series">مسلسلات</string>
+        <string name="coming_soon">قريبًا</string>
+        <string name="coming_soon_message">الأفلام والمسلسلات ستتوفر في المرحلة الثانية</string>
+        <string name="switch_account">تبديل الحساب</string>
+
+    <!-- شاشة عرض القناة (v1.3.0) -->
+    <string name="epg_guide_title">دليل البرامج</string>
+    <string name="epg_now_badge">الآن</string>
+    <string name="epg_unavailable_title">غير متوفر</string>
+    <string name="epg_unavailable">EPG غير متوفر لهذه القناة</string>
+    <string name="epg_loading">جاري تحميل دليل البرامج</string>
+    <string name="now_playing_line">الآن: %1$s</string>
+    <string name="live_badge">مباشر</string>
+    <string name="no_info">لا توجد معلومات</string>
+    <string name="cd_back">رجوع</string>
+    <string name="cd_home">الرئيسية</string>
+    <string name="cd_pip">صورة داخل صورة</string>
+    <string name="cd_aspect">نسبة العرض</string>
+    <string name="cd_fullscreen">ملء الشاشة</string>
+    <string name="cd_prev_category">القسم السابق</string>
+    <string name="cd_next_category">القسم التالي</string>
+
+    <!-- الأفلام والمسلسلات (v1.4.0) -->
+    <string name="movies_count">%1$d فيلم</string>
+    <string name="series_count">%1$d مسلسل</string>
+    <string name="no_movies">لا توجد أفلام في هذا القسم.</string>
+    <string name="no_series">لا توجد مسلسلات في هذا القسم.</string>
+    <string name="no_vod_favorites">لا توجد مفضلات بعد. انقر القلب على الملصق لإضافته.</string>
+    <string name="vod_needs_xtream">الأفلام والمسلسلات تتطلب حساب Xtream.\n(قوائم M3U تعرض كل شيء في قائمة القنوات.)</string>
+    <string name="field_director">المخرج</string>
+    <string name="field_release">تاريخ الصدور</string>
+    <string name="field_duration">المدة</string>
+    <string name="field_genre">النوع</string>
+    <string name="field_cast">البطولة</string>
+    <string name="no_plot">لا يوجد وصف متاح.</string>
+    <string name="play_movie">تشغيل الفيلم</string>
+    <string name="play_episode">تشغيل الحلقة</string>
+    <string name="season_number">الموسم %1$d</string>
+    <string name="episodes_count">%1$d حلقة</string>
+    <string name="no_episodes">لا توجد حلقات متاحة لهذا الموسم.</string>
+    <string name="field_rating">التقييم</string>
+    <string name="cast_section">طاقم العمل</string>
+    <string name="plot_section">القصة</string>
+    <string name="episodes_header">الحلقات</string>
+    <string name="preparing_playback">جاري التحضير…</string>
+    <string name="vod_diag">تشخيص</string>
+    <string name="vod_trace_title">تشخيص VOD</string>
+    <string name="copy">نسخ</string>
+    <string name="share">مشاركة</string>
+    <string name="copied">تم النسخ</string>
+    <string name="no_trace">لا توجد طلبات VOD مسجلة بعد.</string>
+    <string name="sync_movies">جاري تحميل الأفلام…</string>
+    <string name="sync_series">جاري تحميل المسلسلات…</string>
+
+
+    <!-- v1.4.7 — VU reference app strings (verbatim) -->
+    <string name="vu_back">خلف</string>
+    <string name="vu_search_categories">فئات البحث</string>
+    <string name="vu_unavailable">غير متوفره -</string>
+
+    <!-- v1.4.8 — VU user-list page strings (activity_user_list.xml) -->
+    <string name="vu_list_of_user">قائمة المستخدمين</string>
+    <string name="vu_add_user">إضافة مستخدم</string>
+    <string name="vu_edit_user">تعديل المستخدم</string>
+    <string name="vu_save">حفظ</string>
+    <string name="vu_portal_removed">تم حذف الحساب بنجاح.</string>
+    <string name="vu_premium">غالي</string>
+    <string name="cd_edit_user">تعديل الحساب</string>
+    <string name="cd_delete_user">حذف الحساب</string>
+4.11 — login flow (reference: add/edit portal; v1.19.12 removed the intro slider) -->
+    <string name="vu_enter_m3u_url">أدخل عنوان URL لـ M3U</string>
+    <string name="vu_login_xtream">تسجيل الدخول باستخدام Xtream Codes API</string>
+    <string name="vu_browse_playlist">تصفح قائمة التشغيل الخاصة بك</string>
+    <string name="vu_connect_mac">تواصل مع معرف MAC</string>
+    <!-- v1.13.0 — تسجيل الدخول بالكود -->
+    <string name="vu_login_code">تسجيل الدخول بكود من 6 أرقام</string>
+    <string name="vu_code_hint">كود من 6 أرقام</string>
+    <string name="vu_code_button">توليد وتسجيل الدخول</string>
+    <!-- v1.19.0 — لوحة «طريقة الاستخدام» في صفحة الكود (طلب المستخدم:
+         أن يعرف كيف يضيف الأكواد وعلى ماذا سيتحصل) -->
+    <string name="vu_code_how_title">كيفية استخدام الكود؟</string>
+    <string name="vu_code_step1">احصل على كود تفعيل مكوّن من 6 أرقام من مزوّد الخدمة.</string>
+    <string name="vu_code_step2">أدخل الأرقام الستة في حقل الكود بالأسفل.</string>
+    <string name="vu_code_step3">اضغط زر «توليد وتسجيل الدخول» الذهبية — تُضاف الحسابات تلقائياً.</string>
+    <string name="vu_code_gets_line">ستحصل على 3 حسابات جاهزة فيها قنوات مباشرة وأفلام ومسلسلات، تعمل فوراً دون أي إعدادات.</string>
+    <!-- v1.14.0 — تسجيل الدخول بـ QR (جسر SMART CONNECT، المحرك منسوخ من التطبيق المرجعي) -->
+    <string name="vu_login_xtream_short">Xtream Codes API</string>
+    <string name="vu_login_qr">تسجيل الدخول بكود QR</string>
+    <string name="vu_qr_title">تسجيل الدخول بـ QR</string>
+    <string name="vu_qr_scan_hint">امسح الكود بهاتفك لمزامنة بيانات الدخول</string>
+    <string name="vu_qr_verify">رمز التحقق</string>
+    <string name="vu_qr_listening">في انتظار الاتصال…</string>
+    <string name="vu_qr_connecting">جارٍ الاتصال…</string>
+    <string name="vu_qr_close">إغلاق</string>
+    <string name="vu_qr_invalid_payload_short">وصلت بيانات غير صالحة من صفحة QR. حاول مرة أخرى.</string>
+    <string name="vu_portal_connectivity">(اتصال البوابة)</string>
+    <string name="vu_enter_login_details">أدخل تفاصيل تسجيل الدخول الخاصة بك</string>
+    <string name="vu_stalker_connectivity">اتصال بوابة المطارد</string>
+    <string name="vu_name">اسم</string>
+    <string name="vu_username">اسم المستخدم</string>
+    <string name="vu_password">كلمة المرور</string>
+    <string name="vu_portal_url">عنوان URL للبوابة</string>
+    <string name="vu_m3u_url">عنوان URL لـ M3U</string>
+    <string name="vu_mac_address">عنوان ماك</string>
+    <string name="vu_m3u_file_path">مسار ملف M3U</string>
+    <string name="vu_browse">تصفح</string>
+    <string name="vu_important_note">ملحوظة - لا تقم بربط أي محتوى ينتهك حقوق النشر على التطبيق. نحن لا نبيع أي قائمة تشغيل أو اشتراكات. Oria هو مشغل وسائط عام لا يتضمن أي محتوى.</string>
+    <string name="vu_engine_pending">طريقة الاتصال هذه جاهزة — سيتم تفعيل محركها في المرحلة القادمة.</string>
+
+    <!-- v1.5.0 — صفحة الإعدادات + بوابة Stalker + تصفح الملف المحلي -->
+    <string name="vu_general_settings">الاعدادات العامة</string>
+    <string name="vu_time_format">تنسيق الوقت</string>
+    <string name="vu_epg_timeline">EPG الجدول الزمني</string>
+    <string name="vu_parental_control">مراقبة اهلية</string>
+    <string name="vu_rate_us">قيمنا</string>
+    <string name="vu_check_update">اختر التحديث</string>
+    <string name="vu_language">لغة</string>
+    <string name="vu_save_changes">حفظ التغييرات</string>
+    <string name="vu_24_hours">تنسيق 24 ساعة</string>
+    <string name="vu_12_hours">تنسيق 12 ساعة</string>
+    <string name="vu_show_only_epg">عرض القنوات فقط مع EPG</string>
+    <string name="vu_show_all_channels">عرض جميع القنوات</string>
+    <string name="vu_set_parent_password">ضبط كلمة مرور الوالدين</string>
+    <!-- fragment_parent_password.xml — verbatim from the reference -->
+    <string name="vu_confirm_password">تأكيد كلمة المرور</string>
+    <string name="vu_enter_password">أدخل كلمة المرور</string>
+    <string name="vu_enter_confirm_password">أدخل تأكيد كلمة المرور</string>
+    <string name="vu_ok">نعم</string>
+    <string name="vu_newest_version">التطبيق %s هو أحدث إصدار متوفر حالياً</string>
+    <string name="vu_autostart_boot">AutoStart On Boot UP</string>
+    <string name="vu_show_full_epg">Show Full EPG</string>
+    <string name="vu_active_subtitle">Active Subtitle</string>
+    <string name="vu_put_mac">Please put mac address.</string>
+    <string name="vu_portal_not_working">This portal is not working. Please try another portal.</string>
+    <string name="vu_portal_added">Portal is added successfully.</string>
+    <string name="vu_portal_edited">Portal is edited successfully.</string>
+    <string name="vu_select_m3u">Select .m3u</string>
+    <string name="vu_only_m3u">Please select only .m3u files</string>
+    <string name="vu_this_name_exit">هذا الاسم موجود في قوائم التشغيل الخاصة بك. الرجاء استخدام اسم آخر.</string>
+    <string name="vu_file_no_url">The selected file contains no stream URL. Please select a valid .m3u file.</string>
+
+    <!-- v1.6.0 — الصفحة الرئيسية (activity_home + ديالوغاتها) -->
+    <string name="vu_home_settings">إعدادات</string>
+    <string name="vu_change_user">تغيير المستخدم</string>
+    <string name="vu_user_info">معلومات المستخدم</string>
+    <string name="vu_notification">إشعارات</string>
+    <string name="vu_update">تحديث</string>
+    <string name="vu_search">يبحث</string>
+    <string name="vu_catch_up">الحق</string>
+    <string name="vu_last_update">اخر تحديث :</string>
+    <string name="vu_expiration">انتهاء الصلاحية :</string>
+    <string name="vu_logged_in">تسجيل الدخول :</string>
+    <string name="vu_unlimited">غير محدود</string>
+    <string name="vu_account">معلومات الحساب</string>
+    <string name="vu_account_status">حالة الحساب</string>
+    <string name="vu_expiry_date">تاريخ الانتهاء</string>
+    <string name="vu_log_out">تسجيل خروج</string>
+    <string name="vu_text_please_wait">انتظر من فضلك…</string>
+    <string name="vu_text_download_desc">نحن نتصل بالخادم الخاص بك للحصول على القنوات،</string>
+    <string name="vu_text_download_desc_2">معلومات عن الافلام والمسلسلات .</string>
+    <string name="vu_login_successfully">تم تسجيل الدخول بنجاح</string>
+
+    <!-- v1.12.0 — التسجيلات + الدليل الزمني + الرقابة الأبوية -->
+    <!-- v1.12.3 — نصوص مطابقة حرفياً للمرجع: catch_up_live /
+         text_no_catchup_found / no_information من ملفات ترجمة vuiptv. -->
+    <string name="vu_catch_up_live">اللحاق بالركب / لايف</string>
+    <string name="vu_no_catchup_found">لم يتم العثور على اللحاق</string>
+    <string name="no_information">لا يوجد معلومات</string>
+    <string name="vu_catch_up_syncing">جارٍ تجهيز بيانات اللحاق…</string>
+    <string name="vu_catch_up_counts">قنوات %1$d · أرشيف %2$d · تصنيفات %3$d</string>
+    <string name="vu_pincode_incorrect">رقمك السري غير صحيح</string>
+    <string name="vu_epg_timeline_title">الدليل الزمني</string>
+    <string name="vu_no_programs">لا توجد برامج</string>
+    <string name="vu_no_archived_programs">لا توجد برامج مسجلة لهذا اليوم</string>
+    <string name="vu_program_not_archived">هذا البرنامج غير مسجل</string>
+    <string name="vu_open_timeline">فتح الدليل الزمني</string>
+
+    <!-- v1.19.10 — أزرار القنوات بأسلوب الريموت (+CH / CH-) في المشغل،
+         ومواصلة المشاهدة تفتح الفيديو متوقفاً -->
+    <string name="cd_channel_next">القناة التالية</string>
+    <string name="cd_channel_prev">القناة السابقة</string>
+    <string name="resume_paused_hint">استئناف من %1$s — اضغط زر التشغيل للمتابعة</string>
+
+    <!-- v2.0.0 — نافذة التحديث البعيدة من لوحة التحكم (OriaUpdateDialog) -->
+    <string name="update_available_title">تحديث جديد متوفر</string>
+    <string name="update_available_version">الإصدار %1$s</string>
+    <string name="update_downloading">جارٍ التحميل… %1$d%%</string>
+    <string name="update_now">تحديث الآن</string>
+    <string name="update_later">لاحقاً</string>
+    <string name="update_mandatory_note">هذا التحديث إلزامي للاستمرار في استخدام التطبيق</string>
+
+    <!-- v2.0.0 — إعلان لوحة التحكم داخل التطبيق (OriaAnnouncementOverlay) -->
+    <string name="announcement_ok">تم</string>
+
+    <!-- v2.0.2 — البطاقة الإعلانية الاحترافية بأسلوب إعلانات جوجل -->
+    <string name="announcement_badge">إعلان</string>
+    <string name="announcement_visit">زيارة</string>
+    <string name="announcement_image">صورة الإعلان</string>
+
+    <!-- v2.0.2 — البريميوم (المرحلة 2): الشاشة والدخول عبر سيرفر Xtream -->
+    <string name="premium_title">حساب بريميوم</string>
+    <!-- v2.0.4 — نص زر التاج المشترك في صفحات طرق الدخول والحسابات والإعدادات -->
+    <string name="premium_cta">الترقية إلى بريميوم</string>
+    <!-- v2.0.5 — the short pill label of the channels-grid premium entry -->
+    <string name="premium_short">بريميوم</string>
+    <string name="premium_subtitle">افتح عالماً كاملاً من المحتوى الحصري</string>
+    <string name="premium_plans">الخطط والأسعار</string>
+    <string name="premium_month">شهر واحد</string>
+    <string name="premium_days">%1$d يوم</string>
+    <string name="premium_popular">الأكثر طلباً</string>
+    <!-- v2.2.0 — the contact CTA above the login card, split in three so the
+         magic word renders in NEON GREEN inside the gold sentence (user
+         directive: "المجانية" must pop in green). -->
+    <string name="premium_whatsapp_trial_pre">"تواصل معنا لتفعيل التجربة "</string>
+    <string name="premium_whatsapp_trial_accent">المجانية</string>
+    <string name="premium_whatsapp_trial_post"></string>
+    <string name="premium_have_account">لديّ حساب بريميوم</string>
+    <string name="premium_login">تسجيل الدخول بريميوم</string>
+    <string name="premium_username">اسم المستخدم</string>
+    <string name="premium_password">كلمة المرور</string>
+    <string name="premium_back">عودة</string>
+
+    <!-- v2.1.0 — نموذج الاشتراك بريميوم: التفعيل بالتاريخ (تاريخ انتهاء
+         حساب Xtream)، ميزات مقفلة بتجربة مجانية واحدة لكل ميزة، حد 3
+         حسابات للمجاني، وبدون إعلانات لبريميوم -->
+    <string name="premium_gate_title">ميزة بريميوم</string>
+    <string name="premium_gate_trial_body">لقد استخدمت التجربة المجانية الوحيدة لميزة "%1$s". فعّل اشتراك بريميوم لمواصلة استخدامها.</string>
+    <string name="premium_gate_accounts_title">بلغت حد الحسابات</string>
+    <string name="premium_gate_accounts_body">الخطة المجانية تسمح بـ %1$s حسابات كحد أقصى. بريميوم يمنحك حسابات غير محدودة.</string>
+    <string name="premium_gate_cta">تفعيل الاشتراك</string>
+    <string name="premium_dismiss">ليس الآن</string>
+    <string name="premium_feat_offline">المشاهدة دون انترنت</string>
+    <string name="premium_feat_download">تحميل الأفلام والمسلسلات</string>
+    <string name="premium_feat_record">تسجيل القنوات</string>
+    <string name="premium_feat_accounts">حسابات غير محدودة</string>
+    <string name="premium_feat_noads">بدون إعلانات أو إشعارات ترويجية</string>
+    <string name="premium_info_title">حسابك بريميوم</string>
+    <string name="premium_info_account">الحساب</string>
+    <string name="premium_info_start">تاريخ البداية</string>
+    <string name="premium_info_end">تاريخ الانتهاء</string>
+    <string name="premium_info_no_expiry">بدون تاريخ انتهاء</string>
+    <string name="premium_info_days_left">متبقي %1$d يوم</string>
+    <string name="premium_info_features">الميزات المفعلة</string>
+    <string name="premium_done">إغلاق</string>
+    <string name="error_account_limit">الخطة المجانية محدودة بـ %1$d حسابات. قم بالترقية إلى بريميوم لحسابات غير محدودة.</string>
+    <!-- v2.1.1 — حالات الحساب الاحترافية: التاج الحي على الشعار، شريط
+         المزايا في صفحة الاشتراك، سطر تاريخ التجديد/الانتهاء على البطاقات -->
+    <string name="premium_features_title">كل ما ستحصل عليه مع بريميوم</string>
+    <string name="premium_deck_sub">كل ميزة، على كل شاشة، طوال مدة اشتراكك.</string>
+    <string name="premium_ends_on">ينتهي في %1$s</string>
+    <string name="premium_ended_on">انتهى في %1$s</string>
+    <!-- v2.1.3 — أسماء الأشهر لـ OriaDateFmt (التاريخ يتبع لغة التطبيق) -->
+    <string-array name="oria_months">
+        <item>يناير</item>
+        <item>فبراير</item>
+        <item>مارس</item>
+        <item>أبريل</item>
+        <item>مايو</item>
+        <item>يونيو</item>
+        <item>يوليو</item>
+        <item>أغسطس</item>
+        <item>سبتمبر</item>
+        <item>أكتوبر</item>
+        <item>نوفمبر</item>
+        <item>ديسمبر</item>
+    </string-array>
+    <string name="vu_account_button">الحساب</string>
+    <string name="premium_whatsapp_message">السلام عليكم، أريد الاشتراك في خطة {plan} في تطبيق ORIA</string>
+</resources>

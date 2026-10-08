@@ -3,125 +3,95 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
-    <!-- OmniGuard proxy: foreground service + notifications -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- v1.5.0 — General Settings' "AutoStart On Boot UP" (VuBootReceiver). -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- v2.0.0 — the panel's FCM notifications on Android 13+ (asked once at
+         launch, MainActivity requestPermissions(4701); TV boxes < API 33 skip). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- v2.0.0 — the panel's in-app APK updater (UpdateCenter → DownloadManager
+         → FileProvider → ACTION_VIEW installer). Granted through the one-time
+         "install unknown apps" screen, never silently. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- Runs on TV boxes too (no touchscreen required) -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
 
     <application
-        android:name="com.agon.app.ads.SilinaApplication"
+        android:name=".IPTVApp"
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:icon="@mipmap/ic_launcher"
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.IPTVPlayer">
 
-        <!-- SplashActivity - LAUNCHER Activity (Premium Splash Screen) -->
-        <!-- Uses SilinaSplashTheme with windowDisablePreview=true so the
-             system does NOT show the app icon before the splash loads.
-             The screen goes directly to black → splash background. -->
+        <!-- Installs the crash handler BEFORE any library startup provider runs -->
+        <provider
+            android:name=".diagnostics.CrashProvider"
+            android:authorities="${applicationId}.crash-provider"
+            android:exported="false" />
+
+        <!-- v2.0.0 — serves the panel-update APK from the app's external files
+             dir to the system installer (UpdateCenter.openInstaller). -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.update_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/update_file_paths" />
+        </provider>
+
+        <!-- v2.0.0 — FCM push display (OriaMessagingService). Background/killed
+             notification payloads use the default channel below; foreground
+             messages are shown by the service itself. -->
+        <service
+            android:name=".data.remote.OriaMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="oria_general" />
+
+        <!-- View-based crash report viewer (no Compose — must survive UI-layer crashes) -->
         <activity
-            android:name=".ui.screens.SplashActivity"
+            android:name=".diagnostics.CrashReportActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.IPTVPlayer" />
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
+            android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/SilinaSplashTheme">
+            android:supportsPictureInPicture="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden|locale|layoutDirection|uiMode"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Also appears in Android TV launchers -->
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- LoginActivity - Authentication Screen -->
-        <activity
-            android:name=".ui.screens.LoginActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- ProfilesActivity - User List / Accounts Page -->
-        <activity
-            android:name=".ui.screens.ProfilesActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- HubActivity - Main Menu / Sync Engine (entry point after profile selection) -->
-        <activity
-            android:name=".ui.screens.HubActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- DashboardActivity - Instant Grid (launched from HubActivity with CATEGORY extra) -->
-        <activity
-            android:name=".ui.screens.DashboardActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- PlayerActivity - ExoPlayer Playback Engine (PiP + HW Acceleration) -->
-        <activity
-            android:name=".ui.screens.PlayerActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|smallestScreenSize|screenLayout"
-            android:supportsPictureInPicture="true"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- MainActivity - Legacy Navigation -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- FeedActivity — TikTok-style vertical feed in PORTRAIT orientation -->
-        <activity
-            android:name=".ui.screens.FeedActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:theme="@style/SilinaFullscreenTheme" />
-
-        <!-- OmniGuard Anti-Throttling Foreground Proxy (loopback 127.0.0.1:8080) -->
-        <!-- foregroundServiceType=mediaPlayback: required by Android 14+ for
-             any service that touches media playback. The type is ALSO set
-             programmatically in ProxyForegroundService.onCreate() via the
-             3-arg startForeground() overload — the manifest declaration
-             alone is not sufficient on API 34+. -->
-        <service
-            android:name="com.agon.app.proxy.ProxyForegroundService"
-            android:exported="false"
-            android:foregroundServiceType="mediaPlayback"
-            android:stopWithTask="false" />
-
-        <!-- AdMob App ID Meta Data (Required for Ads) -->
-        <!-- V9.7 — Now driven by BuildConfig.ADMOB_APP_ID so the real
-             production App ID can be injected via local.properties without
-             changing the manifest. Defaults to Google's test ID when
-             ADMOB_APP_ID is not set. -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="${admobAppId}" />
-
-        <!-- V9.8 — Google Cast (Chromecast) support -->
-        <meta-data
-            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.agon.app.cast.CastOptionsProvider" />
-
+        <!-- v1.5.0 — General Settings' "AutoStart On Boot UP": guarded by the
+             stored preference (off by default — a no-op until enabled). -->
+        <receiver
+            android:name=".VuBootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
-
 </manifest>

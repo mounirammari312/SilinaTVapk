@@ -1,6 +1,0 @@
-{
-  "name": "DOH",
-  "description": "IPTV player with live streaming and resilient playback",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
